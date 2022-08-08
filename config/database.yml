@@ -1,0 +1,22 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: database_name_development
+  pool: 5
+  host: localhost
+  username: <%= Rails.application.credentials.POSTGRESS_USERNAME %>
+  password: <%= Rails.application.credentials.POSTGRESS_PASSWORD %>
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: database_name_test
+  pool: 5
+  username: <%= Rails.application.credentials.POSTGRESS_USERNAME %>
+  password: <%= Rails.application.credentials.POSTGRESS_PASSWORD %>
+
+staging:
+  url: <%= ENV['DATABASE_URL'] %>
+
+production:
+  url: <%= ENV['DATABASE_URL'] %>
